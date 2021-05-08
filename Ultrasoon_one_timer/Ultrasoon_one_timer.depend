@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1620456310 source:c:\users\daans\documents\codeblock code\ultrasoon_avr\ultrasoon_one_timer\fuse.c
+	<avr/io.h>
+
+1620456310 source:c:\users\daans\documents\codeblock code\ultrasoon_avr\ultrasoon_one_timer\main.c
+	<avr/io.h>
+
+1620460661 source:c:\users\daans\documents\codeblock code\ultrasoon_avr\ultrasoon_one_timer\ultrasoon.c
+	<avr/io.h>
+	<avr/interrupt.h>
+	<util/delay.h>
+	"ultrasoon.h"
+
+1620460634 c:\users\daans\documents\codeblock code\ultrasoon_avr\ultrasoon_one_timer\ultrasoon.h
+
