@@ -36,13 +36,13 @@ int distance(int triggerpin) {
     _delay_us(15);
     unsigned long i = 0;
     while(isTriggerd){
-       if(i > (RETURNVALUE*928*16))
+       if(i > ((RETURNVALUE+10)*16))
        {
-
            PCMASK = 0;
            return RETURNVALUE;
        }
        i++;
+
     }
 
     return pulse/928.0;
@@ -57,7 +57,6 @@ void init_ultrasoon(){
 
 ISR(PCISR)   // Interrupt service routine.
 {
-
     if (echo_pin==1)
 	{
 		TIMER_B = 0;    //TIMER COUNTER CONTROL REGITER (Stop the counter)
