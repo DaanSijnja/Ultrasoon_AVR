@@ -14,6 +14,8 @@
     #define ultra_1_trigger PD0 //trigger pins for the ultrasoon 1
     #define ultra_2_trigger PD1 // if you need a second ultrasoon
 
+    #define RETURNVALUE 30
+
 //settings PCINT ** I recommend you to use PCINT0 because its one of the few PCINT'S that is one Register and not spread between multiple
     #define PCDDR DDRB
     #define PCPIN PINB
@@ -21,10 +23,8 @@
     #define PCMASK PCMSK0 //the Pin Change Mask Register
     #define PCISR PCINT0_vect
     //ultrasoon/ultrasonen
-        #define PCIN ((1<<PCINT0) | (1 << PCINT1))
-
-        #define ultra_1_pin (1 << PB0) //The pin of the echo from the first ultrasoon
-        #define ultra_2_pin (1 << PB1) //The pin of the echo from the second ultrasoon
+        #define ultra_1_pin (1 << PCINT0) //The pin of the echo from the first ultrasoon
+        #define ultra_2_pin (1 << PCINT1) //The pin of the echo from the second ultrasoon
 
 
 //settings timer **use a 16 bit timer ** if you want to use a other timer you need to change the 5 to you're timer NOTE: if you use an 8 bit timer you need to change OVERFLOW to 255

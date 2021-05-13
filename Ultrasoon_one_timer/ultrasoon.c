@@ -36,30 +36,27 @@ int distance(int triggerpin) {
     _delay_us(15);
     unsigned long i = 0;
     while(isTriggerd){
-       if(i > 1856000)
+       if(i > ((RETURNVALUE+10)*16))
        {
-
            PCMASK = 0;
-           return 200;
+           return RETURNVALUE;
        }
        i++;
+
     }
 
     return pulse/928.0;
 }
 void init_ultrasoon(){
-    TRIGGERDDR |= (1 << ultra_1_trigger);
+    TRIGGERDDR |= (1 << ultra_1_trigger) | (1 << ultra_2_trigger);
     TRIGGERPORT &= ~(1 << ultra_1_trigger);
-    DDRB &= ~(1 << PB0);
-    //DDRB |= (1 << PB1);
-
+    TRIGGERPORT &= ~(1 << ultra_2_trigger);
     PCICR |= (1 << PCREG);
     PCMASK = 0;
 }
 
 ISR(PCISR)   // Interrupt service routine.
 {
-    //PORTB ^= (1 << PB1);
     if (echo_pin==1)
 	{
 		TIMER_B = 0;    //TIMER COUNTER CONTROL REGITER (Stop the counter)
