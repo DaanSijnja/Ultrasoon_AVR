@@ -34,6 +34,7 @@ int distance(int triggerpin) {
     TRIGGERPORT &= ~( 1 << triggerpin);
     isTriggerd = 1;
     _delay_us(15);
+
     unsigned long i = 0;
     while(isTriggerd){
        if(i > ((RETURNVALUE+10)*16))
