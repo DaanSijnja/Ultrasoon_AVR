@@ -14,7 +14,7 @@ static volatile int echo_pin = 0; //logic for the ultrasoon
 volatile int isTriggerd = 0;    // used in the while loop
 volatile int overflows = 0;
 
-int distance(int triggerpin) {
+float distance(int triggerpin) {
 
     switch(triggerpin)
     {

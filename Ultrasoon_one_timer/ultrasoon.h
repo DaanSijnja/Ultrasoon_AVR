@@ -38,7 +38,7 @@
         #define OVERFLOW 65535
 
 
-int distance(int triggerpin);
+float distance(int triggerpin);
 void init_ultrasoon(void); // inits the ultrasoon
 
 
